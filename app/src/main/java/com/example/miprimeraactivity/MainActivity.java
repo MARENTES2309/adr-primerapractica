@@ -1,7 +1,13 @@
 package com.example.miprimeraactivity;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.Manifest;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,29 +21,44 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-       Button b= findViewById(R.id.porcentaje);
+        Button b = findViewById(R.id.porcentaje);
 
-       b.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View view) {
-           }
-       });
+        b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+            }
+        });
 
     }
 
-    String texto="";
+    String texto = "";
     String operador;
     Double total;
-    Double n1=0.0;
-    Double n2=0.0;
+    Double n1 = 0.0;
+    Double n2 = 0.0;
     String numero;
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     public void miclick(View view) {
 
         TextView vistaTexto = findViewById(R.id.resultados);
 
-        switch (view.getId())
-        {
+        switch (view.getId()) {
+            /* case R.id.llamar:
+                Intent intent = new Intent(Intent.ACTION_CALL);
+                intent.setData(Uri.parse("tel:555-555-555"));
+                if (checkSelfPermission(Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                    // TODO: Consider calling
+                    //    Activity#requestPermissions
+                    // here to request the missing permissions, and then overriding
+                    //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                    //                                          int[] grantResults)
+                    // to handle the case where the user grants the permission. See the documentation
+                    // for Activity#requestPermissions for more details.
+                    return;
+                }
+                startActivity(intent);
+                break; */
             case R.id.Cero:
                 vistaTexto.setText(vistaTexto.getText() + "0");
                 break;
@@ -93,11 +114,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.Suma:
                 n1= Double.parseDouble(vistaTexto.getText().toString());
                 operador="+";
-                vistaTexto.setText("");
-                break;
-            case R.id.parentesis:
-                n1= Double.parseDouble(vistaTexto.getText().toString());
-                operador="( )";
                 vistaTexto.setText("");
                 break;
             case R.id.Igual:
