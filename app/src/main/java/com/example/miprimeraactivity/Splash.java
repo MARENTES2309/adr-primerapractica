@@ -19,7 +19,12 @@ public class Splash extends AppCompatActivity {
             @Override
             public void run() {
                 Intent it= new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(it);
+                /*it.putExtra("Nombre","Carlos");
+                it.putExtra("Edad","20");*/
+
+                /*persona pp= new persona("Carlos",20);
+                it.putExtra("Persona",pp);
+                startActivity(it);*/
             }
         }, 4000);
     }

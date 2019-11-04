@@ -7,6 +7,11 @@
     android:background="#fff"
     android:orientation="vertical">
 
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/llamar"
+            android:onClick="miclick"/>
     <TextView
         android:id="@+id/resultados"
         android:layout_width="match_parent"
@@ -41,7 +46,7 @@
                 android:text="@string/btnC"
                 android:onClick="miclick"
                 android:textColor="#FF5722"
-                android:textSize="30sp"
+                android:textSize="25sp"
                 android:textStyle="bold" />
 
             <Button
@@ -54,7 +59,7 @@
                 android:background="#424242"
                 android:text="@string/btn8parent"
                 android:textColor="#FF5722"
-                android:textSize="30sp"
+                android:textSize="25sp"
                 android:textStyle="bold" />
 
             <Button
@@ -64,12 +69,12 @@
                 android:layout_marginLeft="2dp"
                 android:layout_marginRight="2dp"
                 android:layout_weight="1"
-                android:minHeight="80dp"
+                android:minHeight="80sp"
                 android:background="#424242"
                 android:text="@string/btnporc"
                 android:onClick="miclick"
                 android:textColor="#FF5722"
-                android:textSize="30sp"
+                android:textSize="25sp"
                 android:textStyle="bold" />
 
             <Button
@@ -82,7 +87,7 @@
                 android:text="@string/btndiv"
                 android:onClick="miclick"
                 android:textColor="#FF5722"
-                android:textSize="30sp"
+                android:textSize="25sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -185,10 +190,10 @@
                 android:layout_marginLeft="2dp"
                 android:layout_marginRight="2dp"
                 android:layout_weight="1"
-                android:minHeight="80dp"
                 android:background="#424242"
-                android:text="@string/btn6"
+                android:minHeight="80dp"
                 android:onClick="miclick"
+                android:text="@string/btn6"
                 android:textColor="#FAFAFA"
                 android:textSize="25sp" />
 
@@ -278,10 +283,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:minHeight="80dp"
                 android:background="#424242"
-                android:text="@string/btnmasmenos"
+                android:minHeight="80dp"
                 android:onClick="miclick"
+                android:text="@string/btnmasmenos"
                 android:textColor="#FF5722"
                 android:textSize="25sp" />
 

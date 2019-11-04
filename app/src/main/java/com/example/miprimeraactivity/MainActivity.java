@@ -4,6 +4,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
+import android.app.Person;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -21,14 +22,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button b = findViewById(R.id.porcentaje);
+       /* Button b = findViewById(R.id.porcentaje);
 
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
             }
-        });
+        }); */
 
+        Bundle bb=getIntent().getExtras();
+
+        persona p =(persona) bb.getSerializable("Persona");
+        Toast.makeText(this,p.getNombre()+" "+p.getEdad()+" "+p.esmayor(), Toast.LENGTH_SHORT).show();
     }
 
     String texto = "";
@@ -44,21 +49,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         TextView vistaTexto = findViewById(R.id.resultados);
 
         switch (view.getId()) {
-            /* case R.id.llamar:
+             case R.id.llamar:
                 Intent intent = new Intent(Intent.ACTION_CALL);
                 intent.setData(Uri.parse("tel:555-555-555"));
                 if (checkSelfPermission(Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-                    // TODO: Consider calling
-                    //    Activity#requestPermissions
-                    // here to request the missing permissions, and then overriding
-                    //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-                    //                                          int[] grantResults)
-                    // to handle the case where the user grants the permission. See the documentation
-                    // for Activity#requestPermissions for more details.
+                requestPermissions(new String[]{Manifest.permission.CALL_PHONE},1);
                     return;
                 }
                 startActivity(intent);
-                break; */
+                break;
             case R.id.Cero:
                 vistaTexto.setText(vistaTexto.getText() + "0");
                 break;
